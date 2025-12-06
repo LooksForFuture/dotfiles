@@ -46,6 +46,7 @@
 (global-set-key (kbd "C-<up>")    'windmove-up)
 (global-set-key (kbd "C-<down>")  'windmove-down)
 (global-set-key [f4]  'compile)
+(global-set-key [f1]  'project-compile)
 
 (setq show-paren-delay 0)
 (show-paren-mode)
@@ -55,6 +56,7 @@
 (menu-bar-mode -1) 
 (toggle-scroll-bar -1) 
 (tool-bar-mode -1) 
+(setq default-frame-alist '((undecorated . t)))
 
 ;; Configure SBCL as the Lisp program for SLIME.
 (add-to-list 'exec-path "/usr/local/bin")
