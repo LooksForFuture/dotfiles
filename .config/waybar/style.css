@@ -1,0 +1,48 @@
+/* Global Styles */
+* {
+  font-family: "monospace 13";
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#waybar {
+    color: #D0D0D0;
+    background-color: #282828;
+}
+
+/* Active module style */
+.active {
+  color: #93a1a1;  /* Accent color for active modules (like a soft blue) */
+}
+
+/* Tooltip Styles */
+.tooltip {
+  background-color: #505050; /* Dark tooltip background */
+  color: #D0D0D0;
+  font-size: 1rem;
+  padding: 0.2rem;
+  border-radius: 0.05rem;
+}
+
+/* Battery Tooltip */
+.tooltip.battery {
+  background-color: #505050;
+}
+
+.tooltip.memory {
+  background-color: #505050;
+}
+
+/* Network Tooltip */
+.tooltip.network {
+  background-color: #505050;
+}
+
+#tags button {
+    color: lightgrey;
+}
+
+#tags button.focused {
+    color: black;
+    background-color: lightgrey;
+}
