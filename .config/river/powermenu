@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Define options (each on a new line)
+options="  Lock
+󰍃  Logout
+󰜉  Reboot
+  Shutdown
+  Suspend"
+
+# Show the menu
+choice=$(echo "$options" | wmenu -p "Power:" -f "monospace 15")
+
+# Act based on choice
+case $choice in
+    *Lock) loginctl lock-session ;;
+    *Logout) riverctl exit ;;
+    *Reboot) systemctl reboot ;;
+    *Shutdown) systemctl poweroff ;;
+    *Suspend) systemctl suspend ;;
+esac
