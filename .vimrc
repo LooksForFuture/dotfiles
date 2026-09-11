@@ -3,7 +3,7 @@ syntax on
 set clipboard=unnamed
 set nocompatible
 set encoding=UTF-8
-set foldmethod=syntax
+"set foldmethod=syntax
 filetype off
 
 call plug#begin()
@@ -49,15 +49,29 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap zz za
 
 set tabstop=8
-set softtabstop=8
+set softtabstop=0
 set shiftwidth=8
 set noexpandtab
 set autoindent
 set encoding=utf-8
 set foldnestmax=2
 
-autocmd FileType typescriptreact set tabstop=2 softtabstop=4 shiftwidth=2 expandtab
-autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+"set showmatch
+set incsearch
+set ignorecase
+set smartcase
+
+"set cursorline
+set wildmenu
+
+" Helper to check for trailing whitespace (optional but recommended)
+" Highlight trailing whitespace
+autocmd BufRead,BufNewFile * match Error /\s\+$/
+
+autocmd FileType typescriptreact setlocal tabstop=2 softtabstop=4 shiftwidth=2 expandtab
+autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType c setlocal cindent colorcolumn=80 noexpandtab
 
 nnoremap <C-T> :NERDTreeToggle<CR>
 
