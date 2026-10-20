@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+session=`loginctl session-status | head -n 1 | awk '{print $1}'`
 
 # Define options (each on a new line)
 options="  Lock
@@ -13,7 +15,7 @@ choice=$(echo "$options" | wmenu -p "Power:" -f "monospace 15")
 # Act based on choice
 case $choice in
     *Lock) loginctl lock-session ;;
-    *Logout) riverctl exit ;;
+    *Logout) loginctl terminate-session $session ;;
     *Reboot) systemctl reboot ;;
     *Shutdown) systemctl poweroff ;;
     *Suspend) systemctl suspend ;;
